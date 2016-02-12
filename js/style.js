@@ -33,4 +33,27 @@ $('#textArea').bind('keyup keydown', function() {
      }
     $('#char-count').text(maxCharacters - characters);
 });
+//Take the content of the tweet and prepend to the top of the stream so people know what you are trying to tell them when you click tweet.
+
+$('#tweet-submit').on('click',function(){
+  var tweetChar = $('#textArea').val().length;
+  if(tweetChar <= 140) {
+  $('#stream').prepend('<div class="tweet"><div class="content"><img class="avatar" src="img/alagoon.jpg" /><strong class="fullname">Trevor Casey</strong><span class="username">@tcasey</span><p class="tweet-text">'
+
+/*-----Making the text value live----- */
+   + $('textarea.tweet-compose').val() +
+
+
+   '</p><div class="tweet-actions"><ul><li><span class="icon action-reply"></span> Reply</li><li><span class="icon action-retweet"></span> Retweet</li><li><span class="icon action-favorite"></span> Favorite</li><li><span class="icon action-more"></span> More</li></ul></div><div class="stats"><div class="retweets"><p class="num-retweets">30</p><p>RETWEETS</p></div><div class="favorites"><p class="num-favorites">6</p><p>FAVORITES</p></div><div class="time">'
+
+/*-----Making the time stamp live----- */
+   +  \ +
+
+   '</div></div>');
+
+};
+
+
+});
+
 });
